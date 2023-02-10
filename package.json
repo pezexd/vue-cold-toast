@@ -2,14 +2,21 @@
   "name": "vue-cold-toast",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "files": ["dist"],
+  "main": "dist/my-component-library.umd.js",
+  "module": "dist/my-component-library.es.js",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run build:types",
     "build:types": "vue-tsc --project tsconfig.build-types.json --declaration --emitDeclarationOnly --outDir dist/types ",
     "typecheck": "vue-tsc --project tsconfig.build-types.json --noEmit"
   },
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "toast",
+    "notification"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
