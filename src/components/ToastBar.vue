@@ -1,17 +1,14 @@
 <script setup lang="ts">
-import { Toast } from '../core/types';
-import useToaster from '../core/useToaster';
-import { Presence, Motion } from 'motion/vue'
-import { twMerge } from 'tailwind-merge';
 import { computed, toRefs } from 'vue';
+import { Presence, Motion } from 'motion/vue'
+import { Toast } from '../core/types';
 import { usePreferredReducedMotion, useTimeout } from '@vueuse/core';
 import ToastIcon from './ToastIcon.vue';
 import type { ReducedMotionType, UseTimeoutOptions } from '@vueuse/core'
+import useToaster from '../core/useToaster';
 
 const motion = usePreferredReducedMotion()
 const { toast: instance } = useToaster()
-
-const base = computed(() => twMerge(['flex items-center bg-white text-stone-900 leading-6 will-change-transform shadow max-w-sm pointer-events-auto px-3 py-2.5 gap-x-2 rounded']))
 
 const props = defineProps<{
     toast: Toast
@@ -58,10 +55,16 @@ const { stop: startPause, start: endPause } = useTimeout(toast.value.duration, {
 <template>
     <Presence>
         <Motion v-if="toast.visible" :key="toast.id" :initial="initial" :animate="enter" :exit="exit">
-            <div :class="[base]" :id="toast.id" @mouseenter="startPause" @mouseleave="endPause">
+            <div class="base" :id="toast.id" @mouseenter="startPause" @mouseleave="endPause">
                 <ToastIcon :toast="toast" />
                 {{ toast.message }}
             </div>
         </Motion>
     </Presence>
 </template>
+
+<style scoped>
+.base {
+    @apply flex items-center bg-white text-stone-900 leading-6 will-change-transform shadow max-w-sm pointer-events-auto px-3 py-2.5 gap-x-2 rounded;
+}
+</style>
