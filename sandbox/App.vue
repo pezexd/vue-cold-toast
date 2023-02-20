@@ -1,21 +1,20 @@
 <script setup lang="ts">
-import Input from '../src/Input.vue'
+import HelloWorld from '../src/components/HelloWorld.vue'
+import Toaster from '@/components/Toaster.vue';
+import useToaster from '@/core/useToaster'
+
+const { toast } = useToaster()
+
 </script>
 
 <template>
-    <main>
-        <h1>Welcome to your your sandbox environment</h1>
-
-        <Input label="firstname" :input-attributes="{
-            placeholder: 'Enter your firstname...',
-            type: 'text',
-            autocomplete: 'given-name',
-        }">
-        First-name
-        </Input>
-    </main>
+  <Toaster />
+  <div>
+    <button @click="toast.success('Hola desde index')">
+      Get a toast
+    </button>
+  </div>
+  <HelloWorld msg="Vite + Vue" />
 </template>
-
-<style lang="scss" scoped>
-
+<style scoped>
 </style>

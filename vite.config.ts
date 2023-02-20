@@ -1,31 +1,65 @@
-import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
-import Vue from '@vitejs/plugin-vue'
+import vue from '@vitejs/plugin-vue'
+import { resolve } from 'node:path'
+import typescript2 from 'rollup-plugin-typescript2';
+import dts from "vite-plugin-dts";
 
+// https://vitejs.dev/config/
 export default defineConfig({
-    // If our .vue files have a style, it will be compiled as a single `.css` file under /dist.
-    plugins: [Vue({
-        style: {
-            trim: true
-        },
-    })],
-
-    build: {
-        // Output compiled files to /dist.
-        outDir: './dist',
-        lib: {
-            // Set the entry point (file that contains our components exported).
-            entry: resolve(__dirname, 'src/index.ts'),
-            // Name of the library.
-            name: 'vue-cold-toast',
-            // We are building for CJS and ESM, use a function to rename automatically files.
-            // Example: my-component-library.esm.js
-            fileName: (format) => `${'vue-cold-toast'}.${format}.js`,
-        },
-        rollupOptions: {
-            // Vue is provided by the parent project, don't compile Vue source-code inside our library.
-            external: ['vue'],
-            output: { globals: { vue: 'Vue' } },
-        },
+  plugins: [
+    vue(),
+    dts({
+      insertTypesEntry: true,
+    }),
+    // typescript2({
+    //   check: false,
+    //   include: [
+    //     "src/components/**/*.vue",
+    //   ],
+    //   tsconfigOverride: {
+    //     compilerOptions: {
+    //       outDir: "dist",
+    //       sourceMap: true,
+    //       declaration: true,
+    //       declarationMap: true,
+    //     },
+    //   },
+    //   exclude: ["vite.config.ts"]
+    // })
+  ],
+  build: {
+    cssCodeSplit: true,
+    lib: {
+      // Could also be a dictionary or array of multiple entry points
+      entry: [
+        "src/components/main.ts",
+      ],
+      name: 'vueWithToast',
+      formats: ["es", "cjs", "umd"],
+      fileName: format => `vue-cold-toast.${format}.js`,
     },
+    rollupOptions: {
+      // make sure to externalize deps that should not be bundled
+      // into your library
+      input: {
+        main: resolve(__dirname, "src/components/main.ts"),
+      },
+      external: ['vue'],
+      output: {
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'main.css') return 'vue-cold-toast.css';
+          return assetInfo.name;
+        },
+        exports: "named",
+        globals: {
+          vue: 'Vue',
+        },
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, 'src'),
+    },
+  },
 })

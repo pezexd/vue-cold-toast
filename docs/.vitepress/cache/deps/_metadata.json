@@ -1,0 +1,44 @@
+{
+  "hash": "1e9589b8",
+  "browserHash": "0a025a8a",
+  "optimized": {
+    "vue": {
+      "src": "../../../../node_modules/.pnpm/vue@3.2.47/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "dcaa2488",
+      "needsInterop": false
+    },
+    "@theme/index": {
+      "src": "../../../../node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/index.js",
+      "file": "@theme_index.js",
+      "fileHash": "033788cb",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "src": "../../../../node_modules/.pnpm/@vueuse+core@9.12.0_vue@3.2.47/node_modules/@vueuse/core/index.mjs",
+      "file": "@vueuse_core.js",
+      "fileHash": "4db9f4ba",
+      "needsInterop": false
+    },
+    "tailwind-merge": {
+      "src": "../../../../node_modules/.pnpm/tailwind-merge@1.9.1/node_modules/tailwind-merge/dist/tailwind-merge.mjs",
+      "file": "tailwind-merge.js",
+      "fileHash": "dfda427b",
+      "needsInterop": false
+    },
+    "motion/vue": {
+      "src": "../../../../node_modules/.pnpm/motion@10.15.5/node_modules/motion/dist/vue.es.js",
+      "file": "motion_vue.js",
+      "fileHash": "7625fa5d",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-LZPJ5JBW": {
+      "file": "chunk-LZPJ5JBW.js"
+    },
+    "chunk-JC4IRQUL": {
+      "file": "chunk-JC4IRQUL.js"
+    }
+  }
+}
