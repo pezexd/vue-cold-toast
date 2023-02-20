@@ -55,6 +55,7 @@ export default defineConfig({
           vue: 'Vue',
         },
       },
+      
     },
   },
   resolve: {
