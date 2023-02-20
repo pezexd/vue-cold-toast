@@ -3,16 +3,6 @@ title: Getting Started
 layout: docs
 ---
 
-<script setup>
-import Button from '../components/Button.vue'
-import { useToaster } from '../../src/core';
-import Toaster from '../../src/components/Toaster.vue'
-
-const { toast } = useToaster();
-</script>
-
-<Toaster />
-
 # Getting Started
 This section will help you to install VueColdToast in your Vue project.
 
@@ -72,10 +62,5 @@ const { toast } = useToaster();
 
 ```
 :::
-
-<div class="text-center">
-    <Button variant="secondary" @click="toast.success('Toast burned!')">Make me a Toast</Button>
-</div>
-
 ## What's next?
 By now, you have a basic functionality with VueColdToast, then you can test and setting up custom styles and use <code>The Best Toast in Town</code> for Vue.

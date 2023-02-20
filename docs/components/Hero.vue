@@ -28,29 +28,11 @@ import Button from './Button.vue';
                     <Button as="a" href="/guide/getting-started">
                         Get started
                     </Button>
-                    <Button as="a" href="#" variant="secondary">
+                    <Button as="a" href="https://github.com/pezexd/vue-cold-toast" variant="secondary">
                         View on GitHub
                     </Button>
                 </div>
             </div>
-            <!-- <div class="pt-8 w-full grid grid-cols-1 gap-y-8 sm:gap-y-0 sm:gap-x-6 sm:grid-cols-3">
-                <article class="w-full h-full p-3 bg-white/5 rounded-md">
-                    <h2 class="font-semibold">
-                        Customizable
-                    </h2>
-                    <p class="text-sm pt-2 leading-6 font-medium opacity-50"> 
-                        Fully customizable for classes and styles
-                    </p>
-                </article>
-                <article class="w-full h-full p-3 bg-white/5 rounded-md">
-                    <h2 class="font-semibold">
-                        Title
-                    </h2>
-                    <p class="text-sm pt-2 leading-6 font-medium opacity-50"> 
-                        Details
-                    </p>
-                </article>
-            </div> -->
         </div>
     </main>
 </template>

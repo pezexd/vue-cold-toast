@@ -1,6 +1,9 @@
-export default {
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
     title: 'VueColdToast',
     description: 'Just playing around.',
+    cleanUrls: true,
     head: [
         ['script', { src: 'https://cdn.tailwindcss.com' }]
     ],
@@ -19,4 +22,4 @@ export default {
             { text: 'Changelog', link: 'https://github.com/...' }
         ]
     },
-}  
+})
