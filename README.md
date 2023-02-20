@@ -3,7 +3,10 @@
 
 ## Getting started
 
-This section will help you to install VueColdToast in your Vue project.
+This section will help you to install VueColdToast in your Vue project. [Read Docs](https://vue-cold-toast.vercel.app)
+
+
+
 **Warning**
 This component is currently in <code>alpha</code> status and will have breaking changes.
 
