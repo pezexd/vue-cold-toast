@@ -34,7 +34,7 @@ export default defineConfig({
       entry: [
         "src/components/main.ts",
       ],
-      name: 'vueWithToast',
+      name: 'vueColdToast',
       formats: ["es", "cjs", "umd"],
       fileName: format => `vue-cold-toast.${format}.js`,
     },
@@ -55,7 +55,6 @@ export default defineConfig({
           vue: 'Vue',
         },
       },
-      
     },
   },
   resolve: {

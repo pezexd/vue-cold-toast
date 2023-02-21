@@ -1,9 +1,9 @@
-import { createGlobalState } from '@vueuse/core'
+import { createGlobalState } from './utils'
 import { ref } from 'vue'
 import { Toast, action, actionTypes } from './types'
-import type { CreateGlobalStateReturn } from '@vueuse/core'
+import type { CreateGlobalStateReturn } from './utils/createGlobalState'
 
-const toastLimit = 7
+const toastLimit = 6
 
 export const useState = createGlobalState(() => {
     const toasts = ref<Toast[]>([])
@@ -14,7 +14,7 @@ export const useState = createGlobalState(() => {
 })
 
 export const reducer = (toasts: Toast[], action: action): { toasts: Toast[] } => {
-    switch(action.type) {
+    switch (action.type) {
         case actionTypes.addToast:
             return {
                 toasts: [action.toast, ...toasts].slice(0, toastLimit)
@@ -24,7 +24,7 @@ export const reducer = (toasts: Toast[], action: action): { toasts: Toast[] } =>
             const { toastId } = action
             return {
                 toasts: toasts.map((t) => {
-                    if (t.id === toastId || toastId === undefined ) {
+                    if (t.id === toastId || toastId === undefined) {
                         return { ...t, visible: false }
                     }
                     else {

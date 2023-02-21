@@ -6,9 +6,8 @@
 //   }
 // };
 
-import { Toaster } from "@/components";
+import { Toaster } from "../components";
 
 export default Toaster
 
-export * from '@/components'
-export * from '@/core'
+export * from '../core'

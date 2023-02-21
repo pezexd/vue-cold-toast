@@ -1,8 +1,8 @@
-import { actionTypes, Toast, ToastTypes } from './types';
-import { useCounter } from '@vueuse/core'
+import { actionTypes, Toast, ToastOptions, ToastType } from './types';
 import { dispatch } from './state';
+import { useCounter } from './utils'
 
-type ToastHandler = (message: string) => string;
+export type ToastHandler = (message: string, opts?: ToastOptions) => string;
 
 const genToastId = (() => {
     const { inc } = useCounter(0)
@@ -12,16 +12,17 @@ const genToastId = (() => {
     }
 })()
 
-const createToast = (message: string, type: ToastTypes = 'blank'): Toast => ({
-    id: genToastId(),
-    visible: true,
+const createToast = (message: string, type: ToastType = 'blank', opts?: ToastOptions): Toast => ({
+    id: opts?.id || genToastId(),
     type,
     message,
+    visible: true,
     duration: 3000,
+    ...opts
 })
 
-const createHandler = (type: ToastTypes): ToastHandler => (message: string) => {
-    const toast = createToast(message, type)
+const createHandler = (type: ToastType): ToastHandler => (message, opts) => {
+    const toast = createToast(message, type, opts)
     dispatch({ type: actionTypes.addToast, toast })
     return toast.id
 }
@@ -31,7 +32,7 @@ const dismissHandler = (toastId?: string) => {
 }
 
 function useToaster() {
-    const toast = (message: string) => createHandler('blank')(message)
+    const toast = (message: string, opts?: ToastOptions) => createHandler('blank')(message, opts)
     toast.success = createHandler('success')
     toast.error = createHandler('error')
     toast.loading = createHandler('loading')
@@ -39,7 +40,7 @@ function useToaster() {
     toast.dismiss = dismissHandler
 
     toast.promise = <T>(promise: Promise<T>, msgs: { loading: string, success: string, error: string },) => {
-        const id = toast.loading(msgs.loading)
+        toast.loading(msgs.loading)
 
         promise
             .then((p) => {
