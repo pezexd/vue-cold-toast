@@ -1,35 +1,39 @@
 <script setup lang="ts">
 import { Motion } from 'motion/vue'
-import type { Motion as MotionType } from 'motion/vue'
+import type { MotionState } from 'motion/types'
 </script>
 
 <template>
     <Motion :initial="{ opacity: 0, transform: 'scale(0) rotate(0deg)' }"
-        :animate="{ opacity: 1, transform: ['scale(0) rotate(0deg)', 'scale(1) rotate(45deg)'] }"
+        :animate="{ opacity: 1, transform: ['scale(0) rotate(0deg)', 'scale(1) '] }"
         :transition="{ duration: 0.3, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)', forwards: true, animationDelay: '100ms' }">
-        <div class="checkbox" />
+        <div class="circle">
+            <Motion :initial="{ opacity: 0, width: '0px', heigth: '0px', transform: 'scale(0) rotate(0)' }"
+                :animate="{ opacity: 1, width: ['0px', '6px'], heigth: ['0px', '10px'], transform: ['scale(0) rotate(45deg)', 'scale(1) rotate(45deg)'] }"
+                :transition="{ duration: 0.25, easing: 'ease-in', forwards: true, animationDelay: '200ms' }"
+                class="checkmark" />
+        </div>
     </Motion>
 </template>
 
 <style scoped>
-.checkbox {
-    @apply bg-green-500 w-5 h-5 rounded-full relative after:box-border after:absolute after:border-r-2 after:border-b-2 after:border-white after:bottom-1.5 after:left-1.5 after:h-2.5 after:w-1.5 after:opacity-0 after:animate-[checkmark_.2s_ease-out_forwards_200ms];
+.circle {
+    background-color: rgb(34 197 94);
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    position: relative;
 }
 
-@keyframes checkmark {
-    0% {
-        height: 0;
-        opacity: 0;
-        width: 0;
-    }
-    40% {
-        height: 0;
-        opacity: 1;
-        width: 6px;
-    }
-    100% {
-        height: 10px;
-        opacity: 1;
-    }
+.checkmark {
+    position: relative;
+    box-sizing: border-box;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    border-color: #fff;
+    top: 4px;
+    left: 7px;
+    width: 6px;
+    height: 10px;
 }
 </style>

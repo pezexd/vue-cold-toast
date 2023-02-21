@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Motion } from 'motion/vue'
-import type { Motion as MotionType } from 'motion/vue'
+import type { MotionState } from 'motion/types'
 </script>
 
 <template>
@@ -21,12 +21,28 @@ import type { Motion as MotionType } from 'motion/vue'
 
 <style scoped>
 .error {
-    @apply bg-red-500 w-5 h-5 rounded-full relative;
+    background-color: rgb(239 68 68);
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    position: relative;
 }
 .first-line {
-    @apply relative top-1 left-[9px] bg-white w-0.5 h-3 rotate-45;
+    position: relative;
+    top: 4px;
+    left: 9px;
+    background-color: white;
+    width: 2px;
+    height: 12px;
+    transform: rotate(45deg);
 }
 .second-line {
-    @apply absolute top-1 left-[9px] bg-white w-0.5 h-3 -rotate-45;
+    position: relative;
+    top: 4px;
+    left: 9px;
+    background-color: white;
+    width: 2px;
+    height: 12px;
+    transform: rotate(45deg);
 }
 </style>

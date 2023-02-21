@@ -2,12 +2,12 @@
 import { computed, toRefs } from 'vue';
 import { Presence, Motion } from 'motion/vue'
 import { Toast } from '../core/types';
-import { usePreferredReducedMotion, useTimeout } from '@vueuse/core';
 import ToastIcon from './ToastIcon.vue';
-import type { ReducedMotionType, UseTimeoutOptions } from '@vueuse/core'
 import useToaster from '../core/useToaster';
+import { prefersReducedMotion } from '../core/utils';
+import { useTimeout } from '../core/utils'
+import type { MotionState } from 'motion/types'
 
-const motion = usePreferredReducedMotion()
 const { toast: instance } = useToaster()
 
 const props = defineProps<{
@@ -16,30 +16,22 @@ const props = defineProps<{
 
 const { toast } = toRefs(props)
 
-const initial = computed(() => {
-    if (motion.value == 'reduce') {
-        return { opacity: 0.5 }
-    }
-    else {
-        return { opacity: 0.5, transform: 'translate3d(0, -200%, 0) scale(0.6)' }
-    }
-})
+const animations = computed(() => {
+    const motion = prefersReducedMotion
 
-const enter = computed(() => {
-    if (motion.value == 'reduce') {
-        return { opacity: 1 }
+    if (motion.value) {
+        return {
+            initial: { opacity: 0.5 },
+            enter: { opacity: 1 },
+            exit: { opacity: 0 },
+        }
     }
     else {
-        return { opacity: 1, transform: ['translate3d(0, -200%, 0) scale(0.6)', 'translate3d(0, 0, 0) scale(1)'] }
-    }
-})
-
-const exit = computed(() => {
-    if (motion.value == 'reduce') {
-        return { opacity: 0 }
-    }
-    else {
-        return { opacity: 0, transform: 'translate3d(0, -150%, 0) scale(0.6)', transition: { duration: 0.4, easing: 'cubic-bezier(.06, .71, .55, 1)', forwards: true } }
+        return {
+            initial: { opacity: 0.5, transform: 'translate3d(0, -200%, 0) scale(0.6)' },
+            enter: { opacity: 1, transform: ['translate3d(0, -200%, 0) scale(0.6)', 'translate3d(0, 0, 0) scale(1)'] },
+            exit: { opacity: 0, transform: 'translate3d(0, -150%, 0) scale(0.6)', transition: { duration: 0.4, easing: 'cubic-bezier(.06, .71, .55, 1)', forwards: true } }
+        }
     }
 })
 
@@ -54,7 +46,8 @@ const { stop: startPause, start: endPause } = useTimeout(toast.value.duration, {
 
 <template>
     <Presence>
-        <Motion v-if="toast.visible" :key="toast.id" :initial="initial" :animate="enter" :exit="exit">
+        <Motion v-if="toast.visible" :key="toast.id" :initial="animations.initial" :animate="animations.enter"
+            :exit="animations.exit">
             <div class="base" :id="toast.id" @mouseenter="startPause" @mouseleave="endPause">
                 <ToastIcon :toast="toast" />
                 {{ toast.message }}
@@ -65,6 +58,18 @@ const { stop: startPause, start: endPause } = useTimeout(toast.value.duration, {
 
 <style scoped>
 .base {
-    @apply flex items-center bg-white text-stone-900 leading-6 will-change-transform shadow max-w-sm pointer-events-auto px-3 py-2.5 gap-x-2 rounded;
+    @apply shadow;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+    color: rgb(28 25 23);
+    column-gap: 8px;
+    display: flex;
+    line-height: 1.5rem;
+    max-width: 24rem;
+    padding: 12px 10px;
+    pointer-events: auto;
+    will-change: transform;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
 }
 </style>

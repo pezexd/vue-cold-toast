@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Motion } from 'motion/vue'
-import type { Motion as MotionType } from 'motion/vue'
+import type { MotionState } from 'motion/types'
 </script>
 
 <template>
@@ -12,6 +12,11 @@ import type { Motion as MotionType } from 'motion/vue'
 
 <style scoped>
 .loader {
-    @apply w-5 h-5 box-border border-[3px] rounded-full border-stone-200 border-r-stone-600;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 3px solid rgb(231 229 228);
+    border-right-color: rgb(87 83 78);
+    border-radius: 9999px;
 }
 </style>

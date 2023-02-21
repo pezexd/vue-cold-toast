@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { Toast } from '../core/types'
 import { Motion } from 'motion/vue'
+import { Toast } from '../core/types'
 import { toRefs } from 'vue';
 import Checkmark from './Checkmark.vue';
 import Error from './Error.vue';
 import Loader from './Loader.vue';
+import type { MotionState } from 'motion/types'
 
 const props = defineProps<{
     toast: Toast
