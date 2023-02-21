@@ -1,26 +1,24 @@
-import "./chunk-JC4IRQUL.js";
-
 // node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/index.js
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/fonts.css";
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/vars.css";
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/base.css";
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/utils.css";
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/custom-block.css";
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code.css";
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code-group.css";
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-doc.css";
-import "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-sponsor.css";
-import VPBadge from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue";
-import Layout from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/Layout.vue";
-import NotFound from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/NotFound.vue";
-import { default as default2 } from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeHero.vue";
-import { default as default3 } from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeFeatures.vue";
-import { default as default4 } from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeSponsors.vue";
-import { default as default5 } from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPDocAsideSponsors.vue";
-import { default as default6 } from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPage.vue";
-import { default as default7 } from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageTitle.vue";
-import { default as default8 } from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageSection.vue";
-import { default as default9 } from "D:/Develop/vue-toasted/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamMembers.vue";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/fonts.css";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/vars.css";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/base.css";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/utils.css";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/custom-block.css";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code.css";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code-group.css";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-doc.css";
+import "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/styles/components/vp-sponsor.css";
+import VPBadge from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue";
+import Layout from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/Layout.vue";
+import NotFound from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/NotFound.vue";
+import { default as default2 } from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeHero.vue";
+import { default as default3 } from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeFeatures.vue";
+import { default as default4 } from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPHomeSponsors.vue";
+import { default as default5 } from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPDocAsideSponsors.vue";
+import { default as default6 } from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPage.vue";
+import { default as default7 } from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageTitle.vue";
+import { default as default8 } from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageSection.vue";
+import { default as default9 } from "D:/Develop/vue-cold-toast/node_modules/.pnpm/vitepress@1.0.0-alpha.46_@types+node@18.13.0/node_modules/vitepress/dist/client/theme-default/components/VPTeamMembers.vue";
 var theme = {
   Layout,
   NotFound,

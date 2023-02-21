@@ -10,8 +10,8 @@ const props = withDefaults(defineProps<{
 })
 
 const classes = computed(() => {
-    const primary = 'rounded-xl bg-emerald-400/20 text-emerald-400 px-3 py-2 text-sm transition hover:bg-emerald-400/30'
-    const secondary = 'rounded-xl bg-stone-400/20 text-stone-200 px-3 py-2 text-sm transition hover:bg-stone-400/30'
+    const primary = 'rounded-xl bg-[#1099A2]/20 text-[#1099A2] px-3 py-2 text-sm transition hover:bg-[#1099A2]/30'
+    const secondary = 'rounded-xl bg-stone-400/20 text-[var(--vp-c-text-1)] px-3 py-2 text-sm transition hover:bg-stone-400/30'
     if (props.variant === 'primary') {
         return primary
     }
