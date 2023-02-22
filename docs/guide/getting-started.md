@@ -29,7 +29,7 @@ $ pnpm add vue-cold-toast
 
 :::
 
-## Step 2: Boot up in the App
+## Step 2: Set up in the App
 
 ::: code-group
 
@@ -42,6 +42,11 @@ import { Toaster } from 'vue-cold-toast';
   <Toaster />
   //...
 </template>
+```
+
+```ts [main.ts]
+import 'vue-cold-toast/dist/vue-cold-toast.css';
+// ...
 ```
 :::
 
