@@ -31,16 +31,16 @@ import type { MotionState } from 'motion/types'
     position: relative;
     top: 4px;
     left: 9px;
-    background-color: white;
+    background-color: #fff;
     width: 2px;
     height: 12px;
     transform: rotate(45deg);
 }
 .second-line {
     position: relative;
-    top: 4px;
+    bottom: 8px;
     left: 9px;
-    background-color: white;
+    background-color: #fff;
     width: 2px;
     height: 12px;
     transform: rotate(45deg);
