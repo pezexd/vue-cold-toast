@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ToastPosition } from '../core/types';
+import { Toast, ToastPosition } from '../core/types';
 import { computed, toRefs } from 'vue';
 import { useState } from '../core/state'
 import ToastBar from './ToastBar.vue';
@@ -29,17 +29,20 @@ const wrapperOffset = computed((): CSSProperties => {
             : { alignItems: 'flex-start' }
 
     return {
+        flexDirection: top ? 'column' : 'column-reverse',
         ...calculateX,
         ...calculateY
     }
 })
+
+const tPosition = (t: Toast) => t.position || position.value
 </script>
 
 <template>
     <div class="container">
         <div class="wrapper" :style="{ ...wrapperOffset }">
             <template v-for="t in toasts" :key="t.id">
-                <ToastBar :toast="t" />
+                <ToastBar :toast="t" :position="tPosition(t)" />
             </template>
         </div>
     </div>
@@ -58,7 +61,6 @@ const wrapperOffset = computed((): CSSProperties => {
 
 .wrapper {
     display: flex;
-    flex-direction: column;
     position: absolute;
     left: 0;
     right: 0;

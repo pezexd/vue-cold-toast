@@ -1,6 +1,6 @@
 import { actionTypes, Toast, ToastOptions, ToastType } from './types';
 import { dispatch } from './state';
-import { useCounter } from './utils'
+import { useCounter } from '@vueuse/core'
 
 export type ToastHandler = (message: string, opts?: ToastOptions) => string;
 

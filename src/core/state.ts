@@ -1,7 +1,7 @@
-import { createGlobalState } from './utils'
+import { createGlobalState } from '@vueuse/core'
 import { ref } from 'vue'
 import { Toast, action, actionTypes } from './types'
-import type { CreateGlobalStateReturn } from './utils/createGlobalState'
+import type { CreateGlobalStateReturn } from '@vueuse/core'
 
 const toastLimit = 6
 

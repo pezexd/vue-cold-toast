@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import Toaster from '@/components/Toaster.vue';
-import useToaster from '@/core/useToaster'
+import { Toaster } from '../src/components'
+import { useToaster } from '../src/core'
 
 const { toast } = useToaster()
 
 </script>
 
 <template>
-  <Toaster />
+  <Toaster position="top-center" />
   <div>
-    <button @click="toast.success('Hola desde index')">
+    <button @click="toast.success(`Toast burned!`, { parseHTML: false })">
       Get a toast
     </button>
   </div>

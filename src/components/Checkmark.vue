@@ -8,8 +8,8 @@ import type { MotionState } from 'motion/types'
         :animate="{ opacity: 1, transform: ['scale(0) rotate(0deg)', 'scale(1) '] }"
         :transition="{ duration: 0.3, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)', forwards: true, animationDelay: '100ms' }">
         <div class="circle">
-            <Motion :initial="{ opacity: 0, width: '0px', heigth: '0px', transform: 'scale(0) rotate(0)' }"
-                :animate="{ opacity: 1, width: ['0px', '6px'], heigth: ['0px', '10px'], transform: ['scale(0) rotate(45deg)', 'scale(1) rotate(45deg)'] }"
+            <Motion :initial="{ opacity: 0, width: '0px', heigth: '0px'} "
+                :animate="{ opacity: 1, width: ['0px', '6px'], heigth: ['0px', '0px', '10px'] }"
                 :transition="{ duration: 0.25, easing: 'ease-in', forwards: true, animationDelay: '200ms' }"
                 class="checkmark" />
         </div>
@@ -35,5 +35,6 @@ import type { MotionState } from 'motion/types'
     left: 7px;
     width: 6px;
     height: 10px;
+    transform: rotate(45deg);
 }
 </style>

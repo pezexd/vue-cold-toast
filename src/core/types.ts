@@ -1,27 +1,28 @@
-import type { CSSProperties } from "vue";
-
 export type ToastType = 'success' | 'error' | 'loading' | 'blank' | 'custom';
 export type ToastPosition = 'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 
 export interface Toast {
-    id: string,
-    icon?: string,
     message: string,
-    duration: number,
     type: ToastType,
     visible?: boolean,
-    
     position?: ToastPosition,
-    style?: CSSProperties,
-    classes?: string
+    // style?: CSSProperties,
+    // classes?: string
+    
+    // Customs
+    id: string,
+    icon?: string,
+    duration: number,
+    parseHTML?: boolean,
 }
 
 export interface ToastOptions {
     id?: string,
-    position?: ToastPosition,
     icon?: string,
     duration?: number,
-    style?: CSSProperties,
+    parseHTML?: boolean,
+    // position?: ToastPosition,
+    // style?: CSSProperties,
 }
 
 export enum actionTypes {
