@@ -2,8 +2,8 @@
 import { computed } from 'vue';
 
 const props = withDefaults(defineProps<{
-    as: string
-    variant: 'primary' | 'secondary'
+    as?: string
+    variant?: 'primary' | 'secondary'
 }>(), {
     as: 'button',
     variant: 'primary'

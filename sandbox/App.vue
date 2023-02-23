@@ -9,7 +9,7 @@ const { toast } = useToaster()
 <template>
   <Toaster position="top-center" />
   <div>
-    <button @click="toast.success(`Toast burned!`, { parseHTML: false })">
+    <button @click="toast('Toast burned!', { icon: '🍪' })">
       Get a toast
     </button>
   </div>

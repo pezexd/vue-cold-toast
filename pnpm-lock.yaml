@@ -15,6 +15,7 @@ specifiers:
   vite-plugin-dts: ^1.7.2
   vitepress: 1.0.0-alpha.46
   vue: ^3.2.47
+  vue-cold-toast: ^0.0.14
   vue-tsc: ^1.0.24
 
 dependencies:
@@ -34,6 +35,7 @@ devDependencies:
   vite-plugin-dts: 1.7.2_rgy4fnry75xg7rw6lgswyd3x2m
   vitepress: 1.0.0-alpha.46_@types+node@18.13.0
   vue: 3.2.47
+  vue-cold-toast: 0.0.14
   vue-tsc: 1.0.24_typescript@4.9.5
 
 packages:
@@ -464,7 +466,6 @@ packages:
       '@motionone/types': 10.15.1
       '@motionone/utils': 10.15.1
       tslib: 2.5.0
-    dev: false
 
   /@motionone/dom/10.15.5:
     resolution: {integrity: sha512-Xc5avlgyh3xukU9tydh9+8mB8+2zAq+WlLsC3eEIp7Ax7DnXgY7Bj/iv0a4X2R9z9ZFZiaXK3BO0xMYHKbAAdA==}
@@ -475,14 +476,12 @@ packages:
       '@motionone/utils': 10.15.1
       hey-listen: 1.0.8
       tslib: 2.5.0
-    dev: false
 
   /@motionone/easing/10.15.1:
     resolution: {integrity: sha512-6hIHBSV+ZVehf9dcKZLT7p5PEKHGhDwky2k8RKkmOvUoYP3S+dXsKupyZpqx5apjd9f+php4vXk4LuS+ADsrWw==}
     dependencies:
       '@motionone/utils': 10.15.1
       tslib: 2.5.0
-    dev: false
 
   /@motionone/generators/10.15.1:
     resolution: {integrity: sha512-67HLsvHJbw6cIbLA/o+gsm7h+6D4Sn7AUrB/GPxvujse1cGZ38F5H7DzoH7PhX+sjvtDnt2IhFYF2Zp1QTMKWQ==}
@@ -490,18 +489,15 @@ packages:
       '@motionone/types': 10.15.1
       '@motionone/utils': 10.15.1
       tslib: 2.5.0
-    dev: false
 
   /@motionone/svelte/10.15.5:
     resolution: {integrity: sha512-Xyxtgp7BlVnSBwcoFmXGHUVnpNktzeXsEifu2NJJWc7VGuxutDsBZxNdz80qvpLIC5MeBa1wh7GGegZzTm1msg==}
     dependencies:
       '@motionone/dom': 10.15.5
       tslib: 2.5.0
-    dev: false
 
   /@motionone/types/10.15.1:
     resolution: {integrity: sha512-iIUd/EgUsRZGrvW0jqdst8st7zKTzS9EsKkP+6c6n4MPZoQHwiHuVtTQLD6Kp0bsBLhNzKIBlHXponn/SDT4hA==}
-    dev: false
 
   /@motionone/utils/10.15.1:
     resolution: {integrity: sha512-p0YncgU+iklvYr/Dq4NobTRdAPv9PveRDUXabPEeOjBLSO/1FNB2phNTZxOxpi1/GZwYpAoECEa0Wam+nsmhSw==}
@@ -509,14 +505,12 @@ packages:
       '@motionone/types': 10.15.1
       hey-listen: 1.0.8
       tslib: 2.5.0
-    dev: false
 
   /@motionone/vue/10.15.5:
     resolution: {integrity: sha512-cUENrLYAolUacHvCgU+8wF9OgSlVutfWbHMLERI/bElCJ+e2YVQvG/CpGhIM5fYOOJzuvg2T2wHmLLmvJoavEw==}
     dependencies:
       '@motionone/dom': 10.15.5
       tslib: 2.5.0
-    dev: false
 
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1158,7 +1152,6 @@ packages:
 
   /hey-listen/1.0.8:
     resolution: {integrity: sha512-COpmrF2NOg4TBWUJ5UVyaCU2A88wEMkUPK4hNqyCkqHbxT92BbvfjoSozkAIIm6XhicGlJHhFdullInrdhwU8Q==}
-    dev: false
 
   /import-lazy/4.0.0:
     resolution: {integrity: sha512-rKtvo6a868b5Hu3heneU+L4yEQ4jYKLtjpnPeUdK7h0yzXGmyBTypknlkCvHFBqfX9YlorEiMM6Dnq/5atfHkw==}
@@ -1312,7 +1305,6 @@ packages:
       '@motionone/types': 10.15.1
       '@motionone/utils': 10.15.1
       '@motionone/vue': 10.15.5
-    dev: false
 
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
@@ -1816,6 +1808,12 @@ packages:
 
   /vscode-textmate/8.0.0:
     resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
+    dev: true
+
+  /vue-cold-toast/0.0.14:
+    resolution: {integrity: sha512-GTazHHkDmuZbl5cs2p2gTgAt3xM9qQWVmxOFy0sm3N7Jqwg75yoaX9dXYgN3hw93JJKoZHwLcEW5G2N+UxHOGA==}
+    dependencies:
+      motion: 10.15.5
     dev: true
 
   /vue-demi/0.13.11_vue@3.2.47:
